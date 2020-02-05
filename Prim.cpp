@@ -10,14 +10,6 @@ typedef vector<v> vv;
 vv graph;
 vi visited;
 
-void print(priority_queue<pair<lli,lli>, v, greater<pair<lli,lli>>> pq) {
-
-    for(lli i = 0; i < pq.size(); ++i) {
-        cout << pq.top().second << " ";
-        pq.pop();
-    }
-    cout << endl;
-}
 lli prim(lli qnt_vertices, lli qnt_arestas, lli begin) {
 
     priority_queue<pair<lli,lli>, v, greater<pair<lli,lli>>> pq;
