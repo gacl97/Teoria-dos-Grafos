@@ -10,7 +10,7 @@ typedef vector<v> vv;
 vv graph;
 vi visited;
 
-lli prim(lli qnt_vertices, lli qnt_arestas, lli begin) {
+lli prim(lli qnt_vertices, lli begin) {
 
     priority_queue<pair<lli,lli>, v, greater<pair<lli,lli>>> pq;
     pq.push(make_pair(0,begin));
@@ -46,7 +46,7 @@ int main () {
         graph[u].push_back(make_pair(v,c));
         graph[v].push_back(make_pair(u,c));
     }
-    lli cost = prim(qnt_vertices,qnt_arestas,1);
+    lli cost = prim(qnt_vertices,1);
     cout << cost << endl;
     return 0;
 }
