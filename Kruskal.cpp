@@ -16,10 +16,7 @@ int find(int x) {
     return  dad_node[x] = find(dad_node[x]);
 }
 
-void Union(tuple<int,int,int> i) {
-
-    int x = find(get<1>(i));
-    int y = find(get<2>(i));
+void Union(int x, int y) {
 
     if(ranks[x] >= ranks[y]) {
         dad_node[y] = x;
@@ -27,16 +24,21 @@ void Union(tuple<int,int,int> i) {
             ranks[x] += 1;
         }
     } else {
-        ranks[x] = y;
+        dad_node[x] = y;
     }
 }
 
 void kruskal() {
 
-    int cost = 0;
+    int x, y, cost = 0;
     for(auto i: edges) {
-        cost += get<0>(i);
-        Union(i); 
+        x = find(get<1>(i));
+        y = find(get<2>(i));
+
+        if(x != y) {
+            cost += get<0>(i);
+            Union(x,y);
+        } 
     }
     cout << cost << endl;
 }
@@ -45,12 +47,14 @@ int main () {
     int qnt_vertex, qnt_edges;
     cin >> qnt_vertex >> qnt_edges;
     dad_node.resize(qnt_vertex+1);
-    ranks.resize(qnt_vertex+1);
+    ranks.resize(qnt_vertex+1,0);
     int u, v, c;
+    for(int i = 0; i < qnt_vertex+1; ++i) {
+        dad_node[i] = i;
+    }
     for (int i = 0; i < qnt_edges; ++i) {
         cin >> u >> v >> c;
         edges.push_back(make_tuple(c,u,v));
-        edges.push_back(make_tuple(c,v,u));
     }
     sort(edges.begin(),edges.end());
     kruskal();
