@@ -30,11 +30,17 @@ Am Bm Cm
 Exemplo de entrada:
 
 5 6
+
 1 2 4
+
 1 3 3
+
 4 3 6
+
 4 5 2
+
 2 4 1
+
 3 5 5
 
 Os vértices devem começar de 1 a N, entradas com vértices 0 irá gerar segmentation fault.
