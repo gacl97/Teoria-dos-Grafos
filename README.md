@@ -38,3 +38,5 @@ Exemplo de entrada:
 3 5 5
 
 Os vértices devem começar de 1 a N, entradas com vértices 0 irá gerar segmentation fault.
+
+Ao rodar o algoritmo, colocar o grafo a ser usado no arquivo "input.txt" que estará junto aos programas.
