@@ -7,7 +7,7 @@ typedef vector<lli> v;
 typedef vector<v> vv;
 
 vv graph;
-v path, new_path;
+v path;
 v visited;
 
 // Bfs para percorrer o grafo, salvando o caminho que será usado para obter o gargalo, se realmente houver caminho para o nó final continua com o ford fukerson
