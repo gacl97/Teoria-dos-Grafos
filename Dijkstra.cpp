@@ -2,19 +2,20 @@
 
 using namespace std;
 
-typedef vector<pair<int,int>> vp;
+typedef long long int lli;
+typedef vector<pair<lli,lli>> vp;
 typedef vector<vp> vv;
-typedef vector<int> v;
+typedef vector<lli> v;
 
 vv graph;
 v distances;
 
-int Dijkstra() {
+lli Dijkstra() {
 
-    priority_queue<pair<int,int>, vp, greater<pair<int,int>>> pq;
+    priority_queue<pair<lli,lli>, vp, greater<pair<lli,lli>>> pq;
     distances[1] = 0;
     pq.push(make_pair(0,1));
-    int head, cost;
+    lli head, cost;
 
     while(!pq.empty()) {
         head = pq.top().second;
@@ -34,18 +35,18 @@ int Dijkstra() {
 }
 
 int main() {
-    int qnt_vertex, qnt_edges;
+    lli qnt_vertex, qnt_edges;
     cin >> qnt_vertex >> qnt_edges;
     graph.resize(qnt_vertex+1);
     distances.resize(qnt_vertex+1, INT_MAX);
     
-    int u, v, c;
-    for(int i = 0; i < qnt_edges; ++i) {
+    lli u, v, c;
+    for(lli i = 0; i < qnt_edges; ++i) {
         cin >> u >> v >> c;
         graph[u].push_back(make_pair(v,c));
         graph[v].push_back(make_pair(u,c));
     }
-    int total_cost = Dijkstra();
+    lli total_cost = Dijkstra();
     cout << total_cost << endl;
     return 0;
 }
