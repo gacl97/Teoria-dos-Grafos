@@ -34,17 +34,11 @@ Am Bm Cm
 Exemplo de entrada:
 
 5 6
-
 1 2 4
-
 1 3 3
-
 4 3 6
-
 4 5 2
-
 2 4 1
-
 3 5 5
 ```
 
@@ -56,5 +50,4 @@ Para rodar os algoritmos basta utilizar o makefile:
 
 make "nome_do_algoritmo"
 ```
-
 Todos os resultados dos algoritmos de distância são de 1 a N.
